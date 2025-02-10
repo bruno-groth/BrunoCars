@@ -58,6 +58,7 @@ docker exec api php artisan migrate
 5. Pronto! A aplicação já estará disponivel em http://localhost
 
 ## Documentação da API
+Para utilizar o CRUD de locadoras no backend, utilize o Postman disponível no repositório (`BrunoCars Locação.postman_collection.json`).
 
 ### Endpoints de Locadoras
 
@@ -68,7 +69,7 @@ docker exec api php artisan migrate
 | GET    | `/api/locadoras/{id}` | Obter detalhes da locadora |
 | PUT    | `/api/locadoras/{id}` | Atualizar locadora |
 | DELETE | `/api/locadoras/{id}` | Excluir locadora |
-| GET    | `/api/pesquisa`       | Obter veículos disponíveis |
+| GET    | `/api/pesquisa`       | Obter veículos disponíveis por locadora (veículos vindos de API Mock) |
 
 ### Exemplo de Resposta (/api/pesquisa)
 ```json
@@ -120,5 +121,3 @@ BrunoCars/
   - Laravel Resources
   - ...
 
-## CRUD Locadoras
-Para utilizar o CRUD de locadoras no backend, utilize o Postman disponível no repositório (`BrunoCars Locação.postman_collection.json`).
