@@ -11,6 +11,9 @@ export default defineConfig({
     vueDevTools(),
   ],
   server: {
+    watch: {
+      usePolling: true,
+    },
     host: true,
     port: 5173,
   },

@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   backend:
+    container_name: api
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -22,6 +23,7 @@ services:
     command: php artisan serve --host=0.0.0.0 --port=8000
 
   frontend:
+    container_name: frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -34,6 +36,7 @@ services:
       - app-network
 
   nginx:
+    container_name: nginx
     build:
       context: ./nginx
       dockerfile: Dockerfile
@@ -48,6 +51,7 @@ services:
       - app-network
 
   mysql:
+    container_name: mysql
     image: mysql:8.3
     ports:
       - "3306:3306"
@@ -62,6 +66,7 @@ services:
       - app-network
 
   json-api:
+    container_name: json-api
     build:
       context: ./json-api
       dockerfile: Dockerfile
