@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento de Locação de Veículos
+# BrunoCars - Sistema de Gerenciamento de Locação de Veículos
 
 Uma aplicação web para gerenciar locadoras de veículos e exibir veículos disponíveis. O sistema inclui uma API RESTful backend e uma interface frontend simples em Vue.js.
 
@@ -33,8 +33,8 @@ O sistema permite:
 
 1. Clone o repositório:
 ```bash
-git clone <url-do-repositorio>
-cd aluguel-carros
+git clone https://github.com/bruno-groth/BrunoCars.git
+cd BrunoCars
 ```
 
 2. Configure as variáveis de ambiente:
@@ -93,7 +93,7 @@ docker exec api php artisan migrate
 ## Estrutura do Projeto
 
 ```
-aluguel-carros/
+BrunoCars/
     backend/           # API Laravel
     frontend/          # Frontend Vue.js
     nginx/            # Configuração Nginx
