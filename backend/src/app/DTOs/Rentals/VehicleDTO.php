@@ -10,6 +10,7 @@ readonly class VehicleDTO
     public function __construct(
         public string $nome,
         public string $categoria,
-        public float $preco
+        public float $preco,
+        public string $id
     ) {}
 }

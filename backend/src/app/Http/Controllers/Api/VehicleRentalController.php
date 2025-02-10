@@ -37,22 +37,26 @@ class VehicleRentalController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(VehicleRental $vehicleRental)
+    public function show(string $id)
     {
+        $vehicleRental = VehicleRental::findOrFail($id);
+
         return response()->json($vehicleRental);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, VehicleRental $vehicleRental): JsonResponse   
+    public function update(Request $request, string $id): JsonResponse   
     {
+        $vehicleRental = VehicleRental::findOrFail($id);
         $validated = $request->validate([
             'name' => 'string|max:255',
             'cnpj' => 'string',
             'address' => 'string',
             'phone' => 'string',
-            'email' => 'email|unique:vehicle_rentals,email,' . $vehicleRental->id
+            'email' => 'email|unique:vehicle_rentals,email,' . $vehicleRental->id,
+            'active' => 'boolean'
         ]);
     
         $vehicleRental->update($validated);
@@ -62,8 +66,9 @@ class VehicleRentalController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(VehicleRental $vehicleRental): JsonResponse
+    public function destroy(string $id): JsonResponse
     {
+        $vehicleRental = VehicleRental::findOrFail($id);
         $vehicleRental->delete();
         return response()->json(null, 204);
     }

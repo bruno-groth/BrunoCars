@@ -11,12 +11,14 @@ class VehicleSearchResource extends JsonResource
 {
     public function toArray($request)
     {
-        return $this->resource->rentals->map(fn ($rental) => [
+        return $this->resource->rentals->map(fn ($data) => [
             'rental' => [
-                'id' => $rental->rental->id,
-                'name' => $rental->rental->name,
+                'id' => $data->rental->id,
+                'name' => $data->rental->name,
+                'address' => $data->rental->address,
+                'phone' => $data->rental->phone,
             ],
-            'vehicles' => $rental->vehicles->map(fn ($vehicle) => [
+            'vehicles' => $data->vehicles->map(fn ($vehicle) => [
                 'nome' => $vehicle->nome,
                 'categoria' => $vehicle->categoria,
                 'preco' => $vehicle->preco,

@@ -12,7 +12,7 @@ class VehicleApiClient
 {
     public function fetchVehicles(VehicleRental $rental): Collection
     {
-        $response = Http::get("http://localhost:3000/vehicles");
+        $response = Http::get("http://aluguel-carros-json-api-1:3000/vehicles");
         
         if (!$response->successful()) {
             throw new Exception('Failed to fetch vehicles');
