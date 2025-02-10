@@ -54,6 +54,8 @@ docker exec api composer install
 docker exec api php artisan migrate
 ```
 
+5. Pronto! A aplicação já estará disponivel em http://localhost
+
 ## Documentação da API
 
 ### Endpoints de Locadoras
