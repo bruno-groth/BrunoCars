@@ -21,5 +21,6 @@ class VehicleRental extends Model
         'address',
         'email',
         'phone',
+        'active'
     ];
 }
