@@ -1,5 +1,5 @@
 {
-  "name": "movami",
+  "name": "brunocars",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -13,6 +13,7 @@
     "@popperjs/core": "^2.11.8",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "bootstrap-vue-3": "^0.5.1",
     "npx": "^10.2.2",
     "pinia": "^2.3.1",
