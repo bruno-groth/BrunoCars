@@ -10,15 +10,20 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip
 
-# Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
+
+COPY ./src /var/www/html
+
+# Instalar dependências do Laravel dentro do container
+RUN composer install --no-dev --optimize-autoloader
+
+# Ajusta permissões de armazenamento
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 CMD ["php-fpm"]

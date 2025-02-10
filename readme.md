@@ -43,13 +43,13 @@ cd BrunoCars
 cp .env.example .env
 cp backend/src/.env.example backend/src/.env
 ```
+
 3. Inicie os containers Docker:
 ```bash
 docker-compose up -d --build
 ```
 
-4. Instale as dependências e execute as migrações:
-
+4. Instale as dependências e migrations:
 ```bash
 docker exec api composer install
 docker exec api php artisan migrate
