@@ -40,7 +40,8 @@ cd BrunoCars
 2. Configure as variáveis de ambiente:
 
 ```bash
-cp backend/.env.example backend/.env
+cp .env.example .env
+cp backend/src/.env.example backend/src/.env
 ```
 3. Inicie os containers Docker:
 ```bash
@@ -105,8 +106,19 @@ BrunoCars/
 
 ## Funcionalidades Atendidas
 
-- [x] CRUD completo para locadoras
+- [x] CRUD completo para locadoras via API
 - [x] Integração de pesquisa de veículos
-- [x] Interface frontend responsiva
+- [x] Interface frontend responsiva para listagem de veículos por Locadora
 - [x] Containerização com Docker
 - [x] Sistema de mock de API
+
+## Patterns Utilizados - API
+  - DTOs
+  - Repositories
+  - Services
+  - Actions Controllers
+  - Laravel Resources
+  - ...
+
+## CRUD Locadoras
+Para utilizar o CRUD de locadoras no backend, utilize o Postman disponível no repositório (`BrunoCars Locação.postman_collection.json`).
